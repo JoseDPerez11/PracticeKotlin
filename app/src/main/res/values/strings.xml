@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PracticeKotlin</string>
-    
+
     <!-- buttons -->
     <string name="button_title_saludapp">Saludar App</string>
     <string name="button_title_imcapp">IMC App</string>
@@ -42,5 +42,5 @@
     <string name="todo_dialog_category_other">Otros</string>
     <string name="todo_dialog_category_personal">Personal</string>
     <string name="todo_dialog_add_task_button">Crear tarea</string>
-    
+
 </resources>
