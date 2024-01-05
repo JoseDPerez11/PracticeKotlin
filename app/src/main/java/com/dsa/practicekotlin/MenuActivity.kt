@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dsa.practicekotlin.databinding.ActivityMenuBinding
 import com.dsa.practicekotlin.firstapp.FirstAppActivity
+import com.dsa.practicekotlin.imcapp.ImcAppActivity
 
 class MenuActivity : AppCompatActivity() {
 
@@ -15,11 +16,17 @@ class MenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnSaludApp.setOnClickListener{ navigateToSaludarApp() }
+        binding.btnImcApp.setOnClickListener{ navigateToImcApp() }
 
     }
 
     private fun navigateToSaludarApp() {
         val intent = Intent(this, FirstAppActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToImcApp() {
+        val intent = Intent(this, ImcAppActivity::class.java)
         startActivity(intent)
     }
 

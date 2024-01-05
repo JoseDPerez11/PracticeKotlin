@@ -9,12 +9,18 @@
     android:gravity="center_vertical"
     tools:context=".MenuActivity">
 
+
     <Button
         android:id="@+id/btnSaludApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_title_saludapp" />
 
+    <Button
+        android:id="@+id/btnImcApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_title_imcapp"/>
 
 
 </LinearLayout>
