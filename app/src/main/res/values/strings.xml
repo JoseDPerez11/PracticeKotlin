@@ -17,12 +17,18 @@
     <string name="research">Comentame sobre el tema que investigas</string>
     <string name="button_saludar">Saludar</string>
 
+
     <!--IMC APP-->
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
     <string name="height">Altura</string>
     <string name="weight">Peso</string>
     <string name="age">Edad</string>
+    <string name="other">Otros factores</string>
+    <string name="actividad">Actividad Física</string>
+    <string name="habitos_alimenticios">Hábitos Alimenticios</string>
+    <string name="habitos_sueno">Hábitos de Sueño</string>
+    <string name="sustancias">Sustancias Nocivas</string>
     <string name="calculate">Calcular</string>
     <string name="recalculate">Re-Calcular</string>
     <string name="result">Tu resultado</string>
