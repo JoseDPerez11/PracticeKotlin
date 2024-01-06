@@ -48,7 +48,7 @@
     <string name="description_obesidad">Estás MUY por encima de lo óptimo para tu peso y altura.</string>
 
     <!--TodoApp-->
-    <string name="todo_title">Bienvenido, Aris</string>
+    <string name="todo_title">Bienvenido </string>
     <string name="todo_categories">Categorías:</string>
     <string name="todo_tasks">Tareas:</string>
 
