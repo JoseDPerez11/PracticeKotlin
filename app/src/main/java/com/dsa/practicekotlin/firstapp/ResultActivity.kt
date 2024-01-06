@@ -16,8 +16,8 @@ class ResultActivity : AppCompatActivity() {
 
         val student = intent.getSerializableExtra(KEY_EXTRA) as StudentModel
 
-        binding.tvResult.text = "Hola, soy ${student.name} ${student.lastname}, estudio ${student.profession} " +
-                "y ahora estoy investigando sobre ${student.research}"
+        binding.tvResult.text = "Hola, soy $student.name $student.lastname, estudio $student.profession " +
+                "y ahora estoy investigando sobre $student.research"
 
     }
 }
