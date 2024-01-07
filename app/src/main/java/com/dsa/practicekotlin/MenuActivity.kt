@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.dsa.practicekotlin.databinding.ActivityMenuBinding
 import com.dsa.practicekotlin.firstapp.FirstAppActivity
 import com.dsa.practicekotlin.imcapp.ImcAppActivity
+import com.dsa.practicekotlin.todoapp.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
 
@@ -17,6 +18,7 @@ class MenuActivity : AppCompatActivity() {
 
         binding.btnSaludApp.setOnClickListener{ navigateToSaludarApp() }
         binding.btnImcApp.setOnClickListener{ navigateToImcApp() }
+        binding.btnTodoApp.setOnClickListener{ navigateToTodoApp() }
 
     }
 
@@ -27,6 +29,11 @@ class MenuActivity : AppCompatActivity() {
 
     private fun navigateToImcApp() {
         val intent = Intent(this, ImcAppActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToTodoApp() {
+        val intent = Intent(this, TodoActivity::class.java)
         startActivity(intent)
     }
 

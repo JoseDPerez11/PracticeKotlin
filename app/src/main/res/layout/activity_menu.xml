@@ -20,7 +20,13 @@
         android:id="@+id/btnImcApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_title_imcapp"/>
+        android:text="@string/button_title_imcapp" />
+
+    <Button
+        android:id="@+id/btnTodoApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_title_todoapp" />
 
 
 </LinearLayout>
