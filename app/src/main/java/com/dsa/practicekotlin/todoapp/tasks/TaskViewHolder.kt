@@ -11,14 +11,14 @@ import com.dsa.practicekotlin.todoapp.categories.TaskCategory
 
 class TaskViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
-    private lateinit var binding: ItemTodoTaskBinding
+    private val binding = ItemTodoTaskBinding.bind(view)
 
     fun render(task: Task) {
 
         if (task.isSelected) {
             binding.tvTask.paintFlags = binding.tvTask.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         } else {
-            binding.tvTask.paintFlags = binding.tvTask.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG
+            binding.tvTask.paintFlags = binding.tvTask.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
         }
 
         binding.tvTask.text = task.name

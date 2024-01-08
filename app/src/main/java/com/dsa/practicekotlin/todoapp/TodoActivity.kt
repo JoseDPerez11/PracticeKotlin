@@ -3,6 +3,10 @@ package com.dsa.practicekotlin.todoapp
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dsa.practicekotlin.R
@@ -41,7 +45,8 @@ class TodoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initUI()
-        initListeners()
+
+        binding.fabAddTask.setOnClickListener{ showDialog() }
     }
 
     private fun initUI() {
@@ -54,10 +59,6 @@ class TodoActivity : AppCompatActivity() {
         binding.rvTasks.layoutManager = LinearLayoutManager(this)
         binding.rvTasks.adapter = taskAdapter
 
-    }
-
-    private fun initListeners() {
-        binding.fabAddTask.setOnClickListener{ showDialog() }
     }
 
     private fun updateCategories(position: Int) {
@@ -84,8 +85,34 @@ class TodoActivity : AppCompatActivity() {
     }
 
     private fun showDialog() {
+
         val dialog = Dialog(this)
-        dialog.setContentView(R.layout)
+        dialog.setContentView(R.layout.dialog_task)
+
+        val btnAddTask: Button = dialog.findViewById(R.id.btnAddTask)
+        val etTask: EditText = dialog.findViewById(R.id.etTask)
+        val rgCategories: RadioGroup = dialog.findViewById(R.id.rgCategories)
+
+        btnAddTask.setOnClickListener{
+            val currentTask = etTask.text.toString()
+            if (currentTask.isNotEmpty()) {
+                val selectedId = rgCategories.checkedRadioButtonId
+                val selectedRadioButton: RadioButton = rgCategories.findViewById(selectedId)
+                val currentCategory: TaskCategory = when(selectedRadioButton.text) {
+                    getString(R.string.todo_dialog_category_business) -> Business
+                    getString(R.string.todo_dialog_category_personal) -> Personal
+                    getString(R.string.todo_dialog_category_university) -> University
+                    getString(R.string.todo_dialog_category_programming) -> Programming
+                    else -> Other
+                }
+
+                tasks.add(Task(currentTask, currentCategory))
+                updateTasks()
+                dialog.hide()
+            }
+        }
+        dialog.show()
+
     }
 
 }
