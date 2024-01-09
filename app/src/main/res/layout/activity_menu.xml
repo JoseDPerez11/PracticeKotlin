@@ -28,5 +28,10 @@
         android:layout_height="wrap_content"
         android:text="@string/button_title_todoapp" />
 
+    <Button
+        android:id="@+id/btnSuperheroApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_title_superheroapp"/>
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.dsa.practicekotlin.databinding.ActivityMenuBinding
 import com.dsa.practicekotlin.firstapp.FirstAppActivity
 import com.dsa.practicekotlin.imcapp.ImcAppActivity
+import com.dsa.practicekotlin.superapp.SuperHeroListActivity
 import com.dsa.practicekotlin.todoapp.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class MenuActivity : AppCompatActivity() {
         binding.btnSaludApp.setOnClickListener{ navigateToSaludarApp() }
         binding.btnImcApp.setOnClickListener{ navigateToImcApp() }
         binding.btnTodoApp.setOnClickListener{ navigateToTodoApp() }
+        binding.btnSuperheroApp.setOnClickListener{ navigateToSuperheroApp() }
 
     }
 
@@ -34,6 +36,11 @@ class MenuActivity : AppCompatActivity() {
 
     private fun navigateToTodoApp() {
         val intent = Intent(this, TodoActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToSuperheroApp() {
+        val intent = Intent(this, SuperHeroListActivity::class.java)
         startActivity(intent)
     }
 
