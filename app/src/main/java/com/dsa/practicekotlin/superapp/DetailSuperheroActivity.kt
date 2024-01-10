@@ -18,10 +18,13 @@ import kotlin.math.roundToInt
 class DetailSuperheroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailSuperheroBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailSuperheroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
         val id: String = intent.getStringExtra(KEY_ID).orEmpty()
         getSuperheroInformation(id)

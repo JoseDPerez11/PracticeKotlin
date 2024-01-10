@@ -19,7 +19,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 class SuperHeroListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySuperHeroListBinding
-    private lateinit var retrofit: Retrofit
 
     private lateinit var adapter: SuperheroAdapter
 
@@ -32,7 +31,6 @@ class SuperHeroListActivity : AppCompatActivity() {
         binding = ActivitySuperHeroListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        retrofit = getRetrofit()
         initUI()
 
     }
@@ -57,7 +55,7 @@ class SuperHeroListActivity : AppCompatActivity() {
     }
 
 
-    private fun getRetrofit(): Retrofit {
+     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://superheroapi.com/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -65,9 +63,10 @@ class SuperHeroListActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
+
         binding.progressBar.isVisible = true
         CoroutineScope(Dispatchers.IO).launch {
-            val myResponse: Response<SuperHeroDataResponse> = retrofit.create(ApiService::class.java).getSuperheroes(query)
+            val myResponse: Response<SuperHeroDataResponse> = getRetrofit().create(ApiService::class.java).getSuperheroes(query)
             if (myResponse.isSuccessful) {
                 val response = myResponse.body()
                 if (response != null) {
@@ -87,7 +86,5 @@ class SuperHeroListActivity : AppCompatActivity() {
         intent.putExtra(KEY_ID, superheroId)
         startActivity(intent)
     }
-
-
 
 }
